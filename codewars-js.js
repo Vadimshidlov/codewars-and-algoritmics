@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 //! code wars sum of cubes
 
@@ -1153,4 +1153,20 @@ function isClosedBracket(ch) {
 console.log(s6, isValid(s6))
 */
 
-const arr = [1, 2, 3, 4, 6, 7, 8, 8]
+// Task Remove Duplicates Arr
+
+const arr1 = [1, 1, 2];
+const arr2 = [0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4];
+
+function removeDuplicates(nums) {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1]) {
+            nums.splice(i, 1);
+            i--;
+        }
+    }
+    return nums.length;
+}
+
+console.log(removeDuplicates(arr2));
+console.log(arr2);

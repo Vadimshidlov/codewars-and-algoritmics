@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 //! code wars sum of cubes
 
@@ -1137,16 +1137,3 @@ console.log(
 console.log();
 
 const array = []; */
-
-const obj = {
-  name: "Vadim",
-  age: 25,
-  city: "Vitebsk",
-}
-
-console.log(obj)
-const objTwo = {
-  name: "123,",
-  age: 25,
-  status: "pro",
-}
