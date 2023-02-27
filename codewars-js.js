@@ -1154,6 +1154,7 @@ console.log(s6, isValid(s6))
 */
 
 // Task Remove Duplicates Arr
+/*
 
 const arr1 = [1, 1, 2];
 const arr2 = [0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4];
@@ -1170,3 +1171,176 @@ function removeDuplicates(nums) {
 
 console.log(removeDuplicates(arr2));
 console.log(arr2);
+*/
+
+// *JS Лабиринт
+/*
+let arr = [
+    [1, 1, 1, 0, 0, 1],
+    [1, 1, 1, 1, 0, 1],
+    [0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 0],
+];
+console.log(arr);
+
+function findPath(start, end) {
+    arr[start.y][start.x] = 5;
+}
+
+function getValidSib(cord) {
+    let { x, y } = cord;
+    let cords = [];
+}
+
+findPath({ x: 3, y: 0 }, { x: 5, y: 5 });*/
+// Bardi +7993 3435710
+/*
+const person = {
+    name: "Vadim",
+    lastName: "Shidlov",
+    age: 25,
+    city: "Vitebsk",
+};
+
+const personArr = Object.entries(person);
+console.log(Object.fromEntries(personArr));
+*/
+/*const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(arr);*/
+// Puzankov sum of two
+//my solution
+/*const sumOfTwo = (arr, target) => {
+    let res = [];
+    hello: for (let i = 0; i < arr.length; i++) {
+        let current = arr[i];
+        for (let j = i + 1; j < arr.length; j++) {
+            if (current + arr[j] === target) {
+                res.push(current, arr[j]);
+                break hello;
+            }
+        }
+    }
+    return res;
+};*/
+//video solution
+/*
+const sumOfTwo = (arr, target) => {
+    const numObject = {};
+    //create object with elements his and indexes
+    for (let i = 0; i < arr.length; i++) {
+        numObject[arr[i]] = i;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        const diff = target - arr[i];
+        if (numObject[diff] && numObject[diff] !== i) {
+            return [i, numObject[diff]];
+        }
+    }
+    return [];
+    console.log(numObject);
+};
+
+console.log(sumOfTwo([2, 7, 11, 15], 14));
+*/
+// Task Sum of three
+/*const array = [-1, 0, 1, 2, -1, -4];
+
+const threeSum = (arr, target = 0) => {
+    const result = [];
+    if (arr.length < 3) return [];
+
+    arr = arr.sort((a, b) => a - b);
+};
+console.log(threeSum(array));*/
+//task непарное число в массиве
+//my solution
+// [4, 1, 2, 1, 2] --> 10
+// [4,1,2] * 2 --> 14
+// 14 - 10 --> 4
+/*const arr = [4, 1, 2, 1, 2];
+const singleNumber1 = arr => {
+    const objElements = {};
+    for (let i = 0; i < arr.length; i++) {
+        objElements[arr[i]] = objElements[arr[i]] ? (objElements[arr[i]] += 1) : 1;
+    }
+    console.log(objElements);
+    for (let key in objElements) {
+        // console.log(objElements[key]);
+        if (objElements[key] === 1) {
+            return key;
+        }
+    }
+    return [];
+};
+console.log(singleNumber1(arr));*/
+
+//Случайная сортировка массива task
+/*
+let input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let shuffle = function (arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        let tmp = arr[i];
+        let rnd = Math.floor(Math.random() * (i + 1));
+        // console.log(rnd);
+
+        arr[i] = arr[rnd];
+        arr[rnd] = tmp;
+    }
+    return arr;
+};
+
+for (let i = 0; i < 10; i++) {
+    console.log(shuffle(input).join(","));
+}
+*/
+
+// Задача с JS собеседования Первый уникальный символ в строке task
+
+const input1 = "leetcode"; // 0
+const input2 = "loveleetcode"; //2
+const input3 = "aabb"; //-1
+
+//my solution
+/*
+
+const firstUniqChar = str => {
+    const countOfSymbols = {};
+
+    for (let i = 0; i < str.length; i++) {
+        countOfSymbols[str[i]] = countOfSymbols[str[i]] ? (countOfSymbols[str[i]] += 1) : 1;
+    }
+    console.log(countOfSymbols);
+
+    for (let key in countOfSymbols) {
+        if (countOfSymbols[key] === 1) {
+            return key;
+            break;
+        }
+    }
+    return -1;
+};
+*/
+
+// video solution
+const firstUniqChar = str => {
+    let map = new Map();
+
+    for (let i = 0; i < str.length; i++) {
+        let current = str[i];
+
+        if (map.has(current)) {
+            map.set(current, map.get(current) + 1);
+        } else {
+            map.set(current, 1);
+        }
+    }
+
+    console.log(map);
+};
+console.log(firstUniqChar(input1));
+console.log(firstUniqChar(input2));
+console.log(firstUniqChar(input3));
+//5:57
