@@ -13,7 +13,7 @@ module.exports = {
     tabWidth: 4,
     printWidth: 120,
     semi: true,
-    singleQuote: false,
+    singleQuote: true,
     useTabs: false,
     quoteProps: "as-needed",
     jsxSingleQuote: false,
@@ -24,4 +24,4 @@ module.exports = {
     insertPragma: false,
     proseWrap: "preserve",
     endOfLine: "lf",
-}
+};

@@ -1325,6 +1325,7 @@ const firstUniqChar = str => {
 */
 
 // video solution
+/*
 const firstUniqChar = str => {
     let map = new Map();
 
@@ -1344,3 +1345,4 @@ console.log(firstUniqChar(input1));
 console.log(firstUniqChar(input2));
 console.log(firstUniqChar(input3));
 //5:57
+*/
