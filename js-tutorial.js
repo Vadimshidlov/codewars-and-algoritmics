@@ -157,7 +157,7 @@ console.log(sumOfAll(1, 2, 2, 4, 4)); */
 
 console.log(sum(1)(2)(3)(3)()); */
 
-function currying(f) {
+/*function currying(f) {
     return function (a) {
         return function (b) {
             return f(a, b);
@@ -170,4 +170,70 @@ function sum(a, b) {
 }
 
 let curry = currying(sum);
-console.log(curry(3)(3));
+console.log(curry(3)(3));*/
+
+/*function multiply(a) {
+    return function (b) {
+        return function (c) {
+            return a * b * c;
+        };
+    };
+}
+
+console.log(multiply(1)(2)(3));*/
+
+/*function discount(discount) {
+    return function (price) {
+        return price * discount;
+    };
+}
+
+const tenPercentDisc = discount(0.1);
+console.log(tenPercentDisc(500));*/
+
+// Планирование: setTimeout и setInterval
+
+/*function hello() {
+    console.log('hello, world');
+}
+
+setTimeout(hello, 1000);*/
+
+/*function sum(a, b) {
+    return console.log(a + b);
+}
+
+setTimeout(sum, 1000, 2, 5);*/
+/*let timerId = setInterval(() => console.log('hello'), 1000);
+setTimeout(() => {
+    clearInterval(timerId);
+}, 5100);*/
+/*
+let count = 0;
+let timerId = setTimeout(function tick() {
+    console.log(count++);
+    timerId = setTimeout(tick, 1000); // (*)
+}, 2000);
+*/
+
+/*function printNumbers(from, to) {
+    let current = from;
+    let timerId = setInterval(() => {
+        console.log(current);
+        if (current === to) {
+            clearInterval(timerId);
+        }
+        current++;
+    }, 1000);
+}
+
+console.log(printNumbers(1, 3));*/
+
+// более точная задержка
+
+function myName(name, surName) {
+    console.log(`${name}, ${surName}`);
+    setTimeout(myName, 1000, name, surName);
+}
+
+setTimeout(myName, 1000, 'Vadim', 'Vitebskyi');
