@@ -129,7 +129,7 @@ console.log(data2.getDate());
 
 console.log(sumOfAll(1, 2, 3, 4, 5, 6));*/
 
-function sumOfAll(a, b, ...args) {
+/* function sumOfAll(a, b, ...args) {
     let c = a + b;
     let sArgs = args.reduce((acc, el) => {
         acc += el;
@@ -138,6 +138,36 @@ function sumOfAll(a, b, ...args) {
     return `Сумма прямых параметров равна: ${c}, а сумма параметров из массива равна: ${sArgs}`;
 }
 
-console.log(sumOfAll(1, 2, 2, 4, 4));
+console.log(sumOfAll(1, 2, 2, 4, 4)); */
 
 //Оператор расширения
+
+// something about currying
+/* function sum(n1) {
+    let s = n1;
+    function next(n2) {
+        if (n2 !== undefined) {
+            s += n2;
+            return next;
+        }
+        return s;
+    }
+    return next;
+}
+
+console.log(sum(1)(2)(3)(3)()); */
+
+function currying(f) {
+    return function (a) {
+        return function (b) {
+            return f(a, b);
+        };
+    };
+}
+
+function sum(a, b) {
+    return a + b;
+}
+
+let curry = currying(sum);
+console.log(curry(3)(3));
