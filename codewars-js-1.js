@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //! code wars sum of cubes
 
@@ -1137,3 +1137,45 @@ console.log(
 console.log();
 
 const array = []; */
+
+//* 6 kyu Which filetypes are you using the most?
+//* https://www.codewars.com/kata/5c7254fcaccda64d01907710/train/javascript
+
+/*function solve(files) {
+    const arr = [];
+
+    const count = {};
+    for (let k = 0; k < files.length; k++) {
+        let find = [];
+
+        for (let i = files[k].length - 1; i > 0; i--) {
+            find.unshift(files[k][i]);
+            if (files[k][i] === '.') {
+                break;
+            }
+        }
+        let format = find.join('');
+        count[format] = count[format] ? (count[format] += 1) : 1;
+        console.log(format);
+    }
+    const res = [];
+    let mount = Math.max(...Object.values(count));
+    for (let key in count) {
+        if (count[key] === mount) {
+            res.push(key);
+        }
+    }
+
+    return res.sort();
+}
+
+const files = [
+    'Lakey - Better days.mp3',
+    'Wheathan - Superlove.wav',
+    'groovy jam.als',
+    '#4 final mixdown.als',
+    'album cover.ps',
+    'good nights.mp3',
+];
+
+console.log(solve());*/

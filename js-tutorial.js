@@ -231,9 +231,61 @@ console.log(printNumbers(1, 3));*/
 
 // более точная задержка
 
-function myName(name, surName) {
+/*function myName(name, surName) {
     console.log(`${name}, ${surName}`);
     setTimeout(myName, 1000, name, surName);
 }
 
-setTimeout(myName, 1000, 'Vadim', 'Vitebskyi');
+setTimeout(myName, 1000, 'Vadim', 'Vitebskyi');*/
+
+// let str = 'hsi  etTi sats!';
+// const arr = str.split('');
+// const res = [];
+
+// const res1 = [];
+// const res2 = [];
+// console.log(arr);
+// go: for (let i = Math.round(arr.length / 2 - 1); i < arr.length; i++) {
+//     res.push(arr[i]);
+//     let k = 0;
+//     for (; k < Math.round(arr.length / 2 - 1); ) {
+//         res.push(arr[k]);
+//         continue;
+//     }
+//     k++;
+// }
+//
+// console.log(res);
+
+/* for (let i = 0; i < Math.round(arr.length / 2 - 1); i++) {
+    res1.push(arr[i]);
+}
+for (let i = Math.round(arr.length / 2 - 1); i < arr.length; i++) {
+    res2.push(arr[i]);
+}
+
+console.log(res1, res2);
+go: for (let i = 0; i < res2.length; i++) {
+    res.push(res2[i]);
+    for (let j = i; j < res1.length; j++) {
+        res.push(res1[j]);
+        break;
+    }
+}
+
+console.log(res.join('')); */
+
+const obj = { '.mp3': 2, '.wav': 1, '.als': 2, '.ps': 1 };
+let res = [];
+let countTwo = Math.max(...Object.values(obj));
+console.log(countTwo);
+for (let key in obj) {
+    if (obj[key] === countTwo) {
+        res.push(key);
+    }
+}
+console.log(res);
+
+// =====
+
+

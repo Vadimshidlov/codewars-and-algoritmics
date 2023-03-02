@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //! code wars sum of cubes
 
@@ -1209,5 +1209,140 @@ const person = {
 const personArr = Object.entries(person);
 console.log(Object.fromEntries(personArr));
 */
-const arr = [1, 2, 3, 4, 5];
-console.log(arr);
+
+// 6 kyu Find the unique number
+// https://www.codewars.com/kata/585d7d5adb20cf33cb000235
+
+// findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+// findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+
+/*const arr = [1, 1, 1, 2, 1, 1];
+
+function findUniq(arr) {
+    const countOfEl = arr.reduce((acc, el) => {
+        acc[el] = acc[el] ? acc[el] + 1 : 1;
+        return acc;
+    }, {});
+    for (let key in countOfEl) {
+        if (countOfEl[key] === 1) {
+            return key;
+        }
+    }
+    return countOfEl;
+}
+
+console.log(findUniq([1, 1, 1, 2, 1, 1]));*/
+
+// 6 kyu Two Sum
+//https://www.codewars.com/kata/52c31f8e6605bcc646000082/train/javascript
+
+/*function twoSum(numbers, target) {
+    for (let i = 0; i < numbers.length; i++) {
+        let current = numbers[i];
+        for (let j = 0; j < numbers.length; j++) {
+            if (current + numbers[j] === target) {
+                return [i, j];
+
+            }
+        }
+    }
+}
+
+console.log(twoSum([1, 2, 3], 4));*/
+
+//https://www.codewars.com/kata/57814d79a56c88e3e0000786/train/javascript not completed
+
+function encrypt(text, n) {
+    if (n === 0 || n < 0) return text;
+
+    let arr = text.split('');
+    console.log(arr);
+    let first = [];
+    let second = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 === 0) {
+            second.push(arr[i]);
+        } else {
+            first.push(arr[i]);
+        }
+    }
+    n--;
+    return encrypt([...first, ...second].join(''), n);
+}
+
+function decrypt(encryptedText, n) {
+    if (n === 0 || n < 0) return encryptedText;
+
+    const arr = encryptedText.split('');
+    const res = [];
+
+    const res1 = [];
+    const res2 = [];
+    for (let i = 0; i < Math.round(arr.length / 2 + 1); i++) {
+        res1.push(arr[i]);
+    }
+    for (let i = Math.round(arr.length / 2 + 1); i < arr.length; i++) {
+        res2.push(arr[i]);
+    }
+
+    console.log(res1, res2);
+    go: for (let i = 0; i < res2.length; i++) {
+        res.push(res2[i]);
+        for (let j = i; j < res1.length; j++) {
+            res.push(res1[j]);
+            break;
+        }
+    }
+    n--;
+    // console.log(res.join(''));
+
+    return decrypt(res.join(''), n);
+}
+// console.log(encrypt('hsi  etTi sats!', 1));
+console.log(decrypt('ih ssia t se!t', 0));
+
+// console.log('Hg'.charCodeAt(1));
+
+// 'ABC'.charCodeAt(0);
+
+// encryptThis("Hello") === "72olle"
+/*function encryptThis(str) {
+    if (str.split(' ').length === 1) {
+        let arr = str.split('');
+        console.log(arr);
+        for (let i = 0; i < arr.length; i++) {
+            if (i === 0) {
+                arr.splice(i, 1, arr[i].charCodeAt(arr[i]));
+            }
+            if (i === 1) {
+                let sec = arr[i];
+                let last = arr[arr.length - 1];
+                arr.splice(i, 1, last);
+                arr.splice(arr.length - 1, 1, sec);
+            }
+        }
+        return arr.join('');
+    } else {
+        let arr = str.split(' ');
+        let res = [];
+        for (let i = 0; i < arr.length; i++) {
+            let arrTwo = arr[i].split('');
+            console.log(arrTwo);
+            for (let j = 0; j < arrTwo.length; j++) {
+                if (j === 0) {
+                    arrTwo.splice(j, 1, arrTwo[j].charCodeAt(arrTwo[j]));
+                }
+                if (j === 1) {
+                    let sec = arrTwo[j];
+                    let last = arrTwo[arrTwo.length - 1];
+                    arrTwo.splice(j, 1, last);
+                    arrTwo.splice(arrTwo.length - 1, 1, sec);
+                }
+            }
+            res.push(arrTwo.join(''));
+        }
+        return res.join(' ');
+    }
+}
+
+console.log(encryptThis('hello world'));*/
