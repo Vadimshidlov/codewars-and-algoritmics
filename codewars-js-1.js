@@ -1179,3 +1179,86 @@ const files = [
 ];
 
 console.log(solve());*/
+
+//! Kata
+// https://www.codewars.com/kata/5f631ed489e0e101a70c70a0/train/javascript
+// доделать //вроде засабмитил
+/*const tourney = array => {
+    if (res.length === 1)
+    const res = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > array[i + 1]) {
+            res.push(array[i]);
+            i++;
+        } else {
+            res.push(array[i + 1]);
+            i++;
+        }
+    }
+    return res; // your code here...
+};
+
+const input = [9, 5, 4, 7, 6, 3, 8, 2];
+
+/!*for (let i = 0; i < input.length; i++) {
+    if (input[i] > input[i + 1]) {
+        res.push(input[i]);
+        i++;
+    } else {
+        res.push(input[i + 1]);
+        i++;
+    }
+}*!/
+
+console.log(tourney(input));*/
+
+function high(str) {
+    const alphabet = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+        e: 5,
+        f: 6,
+        g: 7,
+        h: 8,
+        i: 9,
+        j: 10,
+        k: 11,
+        l: 12,
+        m: 13,
+        n: 14,
+        o: 15,
+        p: 16,
+        q: 17,
+        r: 18,
+        s: 19,
+        t: 20,
+        u: 21,
+        v: 22,
+        w: 23,
+        x: 24,
+        y: 25,
+        z: 26,
+    };
+
+    const elementcount = {};
+    str = str.split(' ');
+    str.map(el => {
+        let count = 0;
+        for (let i = 0; i < el.length; i++) {
+            count += alphabet[el[i]];
+        }
+        elementcount[el] = count;
+    });
+    let preRes = Math.max(...Object.values(elementcount));
+    console.log(preRes);
+    console.log(elementcount);
+    for (let key in elementcount) {
+        if (elementcount[key] === preRes) return key;
+    }
+    // return str;
+}
+
+console.log(high('man i need a taxi up to ubud'));
