@@ -275,7 +275,7 @@ go: for (let i = 0; i < res2.length; i++) {
 
 console.log(res.join('')); */
 
-const obj = { '.mp3': 2, '.wav': 1, '.als': 2, '.ps': 1 };
+/*const obj = { '.mp3': 2, '.wav': 1, '.als': 2, '.ps': 1 };
 let res = [];
 let countTwo = Math.max(...Object.values(obj));
 console.log(countTwo);
@@ -284,8 +284,7 @@ for (let key in obj) {
         res.push(key);
     }
 }
-console.log(res);
+console.log(res);*/
 
 // =====
-
-
+console.log(Math.floor(1.5));

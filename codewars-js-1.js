@@ -1213,6 +1213,7 @@ const input = [9, 5, 4, 7, 6, 3, 8, 2];
 
 console.log(tourney(input));*/
 
+/*
 function high(str) {
     const alphabet = {
         a: 1,
@@ -1262,3 +1263,369 @@ function high(str) {
 }
 
 console.log(high('man i need a taxi up to ubud'));
+*/
+
+//6 kyu
+// Mexican Wave
+// https://www.codewars.com/kata/58f5c63f1e26ecda7e000029/train/javascript
+// доделать
+// wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+
+/*function wave(str) {
+    str = str.split('');
+    const res = [];
+    let count = str.reduce((acc, el) => {
+        if (el !== ' ') {
+            acc++;
+        }
+        return acc;
+    }, 0);
+    console.log(count);
+    for (let i = 0; i < count; i++) {
+        const newStr = Array.from(str);
+        res.push(newStr);
+    }
+    console.log(res.length);
+    label: for (let i = 0; i < res.length; i++) {
+        if (res[i][i] === ' ') {
+            i++;
+        } else {
+            res[i].splice(i, 1, res[i][i].toUpperCase());
+        }
+    }
+    return res.map(el => el.join(''));
+}
+
+console.log(wave('two words'));*/
+
+/*function wave(str) {
+    let waveArr = [];
+    for (let i = 0; i < str.length; i++) {
+        let letter = str[i];
+        if (letter === ' ') {
+            continue;
+        } else {
+            waveArr.push(str.slice(0, i) + letter.toUpperCase() + str.slice(i + 1));
+        }
+    }
+    return waveArr;
+}
+
+console.log(wave('hello'));*/
+
+/*
+function wave(str) {
+    let waveArr = [];
+    for (let i = 0; i < str.length; i++) {
+        let copy = str.split('');
+        if (copy[i] !== ' ') {
+            copy[i] = copy[i].toUpperCase();
+            waveArr.push(copy.join(''));
+        }
+    }
+    return waveArr;
+}
+
+console.log(wave(' gap '));
+*/
+
+//! 6 kuy https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08/train/javascript
+/* const multiplicationTable = function (size) {
+    const table = [];
+    for (let row = 1; row <= size; row++) {
+        const line = [];
+        for (let col = 1; col <= size; col++) {
+            line.push(row * col);
+        }
+        table.push(line);
+    }
+    return table;
+};
+
+console.log(multiplicationTable(3)); */
+
+/*function multiPly(size) {
+    const table = [];
+    for (let row = 1; row <= size; row++) {
+        const line = [];
+        for (let col = 1; col <= size; col++) {
+            line.push(row * col);
+        }
+        table.push(line);
+    }
+    return table;
+}
+
+console.log(multiPly(3));*/
+
+// https://www.codewars.com/kata/isograms 7kuy
+
+/* function isIsogram(str) {
+    str = str.toLowerCase();
+    const countOfEl = {};
+    for (let i = 0; i < str.length; i++) {
+        countOfEl[str[i]] = countOfEl[str[i]] ? (countOfEl[str[i]] += 1) : 1;
+    }
+    for (let key in countOfEl) {
+        if (countOfEl[key] > 1) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log(isIsogram('Dermatoglyphics')); */
+
+//  312 --> "333122"
+/* function explode(str) {
+    const res = [];
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < str[i]; j++) {
+            res.push(str[i]);
+        }
+    }
+    return res.join('');
+}
+
+console.log(explode('312')); */
+
+// TODO https://www.codewars.com/kata/5574835e3e404a0bed00001b/train/javascript
+
+/* function getParticipants(h) {
+    const res = Math.ceil((Math.sqrt(1 + 8 * h) + 1) / 2);
+    return res;
+}
+
+console.log(getParticipants(7)); */
+
+//TODO fibb
+
+/*const fn = n => {
+    if (n === 0 || n === 1) {
+        return n;
+    } else {
+        return fn(n - 1) + fn(n - 2);
+    }
+};*/
+
+// console.log(fn(5));
+
+/*function fib(n) {
+    let a = 0;
+    let b = 1;
+    for (let i = 3; i <= n; i++) {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+console.log(fib(7));*/
+
+// TODO 7 kyu https://www.codewars.com/kata/head-tail-init-and-last
+/*
+const arr = [1, 2, 3, 4, 5];
+
+const head = arr => {
+    return arr[0];
+};
+
+const tail = arr => {
+    const res = [];
+    for (let i = 1; i < arr.length; i++) {
+        res.push(arr[i]);
+    }
+    return res;
+};
+
+const init = arr => {
+    const res = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+        res.push(arr[i]);
+    }
+    return res;
+};
+
+const last = arr => {
+    return arr[arr.length - 1];
+};
+
+console.log(head(arr));
+console.log(tail(arr));
+console.log(init(arr));
+console.log(last(arr));
+*/
+
+//TODO 6 kyu https://www.codewars.com/kata/array-deep-count
+/*let count = 0;
+function deepCount(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        count++;
+        if (Array.isArray(arr[i])) {
+            deepCount(arr[i]);
+        }
+    }
+    return count;
+}
+
+console.log(deepCount([[[[[[[[[]]]]]]]]]));*/
+
+/*function deepCount(arr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        count++;
+        if (Array.isArray(arr[i])) {
+            count += deepCount(arr[i]);
+        }
+    }
+    return count;
+}
+
+console.log(deepCount([[[[[[[[[]]]]]]]]]));*/
+
+//TODO  6 kyu https://www.codewars.com/kata/length-of-missing-array
+
+/*const arr = [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]];
+
+function getLengthOfMissingArray(arrayOfArrays) {
+    if (arrayOfArrays.length === 0) {
+        return 0;
+    }
+    const res = arrayOfArrays.sort((a, b) => a.length - b.length);
+    console.log(arrayOfArrays);
+    for (let i = 0; i < res.length; i++) {
+        if (res[i].length === 0) {
+            return 0;
+        }
+        if (res[i + 1].length !== res[i].length + 1) {
+            return res[i + 1].length - 1;
+        }
+    }
+}
+
+console.log(getLengthOfMissingArray([[1, 2, 2], null]));*/
+
+// TODO 6 kyu https://www.codewars.com/kata/pair-of-gloves
+
+/*function numberOfPairs(gloves) {
+    let count = 0,
+        objOfEls = {};
+    for (let i = 0; i < gloves.length; i++) {
+        objOfEls[gloves[i]] = objOfEls[gloves[i]] ? (objOfEls[gloves[i]] += 1) : 1;
+    }
+    for (let key in objOfEls) {
+        if (objOfEls[key] >= 2) {
+            count += Math.floor(objOfEls[key] / 2);
+        }
+    }
+    return count;
+}
+
+console.log(
+    numberOfPairs([
+        'Red',
+        'Blue',
+        'Navy',
+        'Aqua',
+        'Fuchsia',
+        'Lime',
+        'Silver',
+        'Aqua',
+        'Yellow',
+        'Lime',
+        'Silver',
+        'Aqua',
+        'White',
+        'Blue',
+        'Red',
+        'Maroon',
+        'Yellow',
+        'Green',
+        'Blue',
+        'Lime',
+        'Aqua',
+        'White',
+        'Green',
+        'Yellow',
+        'Purple',
+        'Purple',
+        'Green',
+        'Navy',
+        'Silver',
+        'White',
+        'Green',
+        'Yellow',
+        'Silver',
+        'Lime',
+        'Navy',
+        'Lime',
+        'Silver',
+        'Teal',
+        'Navy',
+        'Silver',
+        'Aqua',
+        'Green',
+        'Purple',
+        'Purple',
+        'Olive',
+        'Lime',
+        'Red',
+        'Lime',
+        'Maroon',
+        'White',
+    ])
+);*/
+
+// TODO 6 kyu https://www.codewars.com/kata/sorting-by-bits
+
+/*function sortByBit(arr) {
+    let res = [];
+    const countOfBits = el => {
+        let count = 0;
+        el = el.toString(2);
+        for (let i = 0; i < el.length; i++) {
+            if (el[i] === '1') {
+                count++;
+            }
+        }
+        return count;
+    };
+    console.log(countOfBits(15));
+
+    return arr.sort((a, b) => (countOfBits(a) === countOfBits(b) ? a - b : countOfBits(a) - countOfBits(b)));
+}
+
+console.log(sortByBit([7, 6, 15, 8]));*/
+
+// TODO 6 kyu https://www.codewars.com/kata/lets-recycle
+
+const input = [
+    { type: 'rotten apples', material: 'organic' },
+    { type: 'out of date yogurt', material: 'organic', secondMaterial: 'plastic' },
+    { type: 'wine bottle', material: 'glass', secondMaterial: 'paper' },
+    { type: 'amazon box', material: 'paper' },
+    { type: 'beer bottle', material: 'glass', secondMaterial: 'paper' },
+];
+
+function recycle(array) {
+    const paper = [],
+        glass = [],
+        organic = [],
+        plastic = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].material === 'paper' || array[i].secondMaterial === 'paper') paper.push(array[i].type);
+
+        if (array[i].material === 'glass' || array[i].secondMaterial === 'glass') glass.push(array[i].type);
+
+        if (array[i].material === 'organic' || array[i].secondMaterial === 'organic') organic.push(array[i].type);
+
+        if (array[i].material === 'plastic' || array[i].secondMaterial === 'plastic') plastic.push(array[i].type);
+    }
+
+    return [paper, glass, organic, plastic];
+}
+
+console.log(recycle(input));
