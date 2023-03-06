@@ -1819,8 +1819,8 @@ console.log(find(object, path));*/
 
 console.log(towerBuilder(6)); */
 
-//! help solution
-function towerBuilder(nFloors) {
+//* help solution
+/* function towerBuilder(nFloors) {
     let space,
         star,
         tower = [];
@@ -1833,4 +1833,129 @@ function towerBuilder(nFloors) {
     return tower;
 }
 
-console.log(towerBuilder(10));
+console.log(towerBuilder(10)); */
+
+// *
+/* const arr = ['live', 'arp', 'strong'];
+
+function inArray(array1, array2) {
+    const res = [];
+    for (let i = 0; i < array1.length; i++) {
+        let current = array1[i];
+        for (let j = 0; j < array2.length; j++) {
+            if (array2[j].indexOf(current) !== -1) {
+                res.push(current);
+            }
+        }
+    }
+    return Array.from(new Set(res)).sort();
+}
+
+console.log(inArray(['tarp', 'mice', 'bull'], ['lively', 'alive', 'harp', 'sharp', 'armstrong'])); */
+
+// TODO https://www.codewars.com/kata/53697be005f803751e0015aa/train/javascript 6Kuy The Vowel Code
+
+/* function encode(string) {
+    const obj = {
+        a: 1,
+        e: 2,
+        i: 3,
+        o: 4,
+        u: 5,
+    };
+    const res = [];
+    for (let i = 0; i < string.length; i++) {
+        if (obj[string[i]]) {
+            res.push(obj[string[i]]);
+        } else {
+            res.push(string[i]);
+        }
+    }
+
+    return res.join('');
+}
+
+function decode(string) {
+    const obj = {
+        a: 1,
+        e: 2,
+        i: 3,
+        o: 4,
+        u: 5,
+    };
+    const res = [];
+    let stringTwo = string.split('');
+    for (let key in obj) {
+        if (stringTwo.includes(String(obj[key]))) {
+            stringTwo.splice(stringTwo.indexOf(String(obj[key])), 1, key);
+        }
+    }
+
+    return stringTwo.join('');
+}
+console.log(encode('hello'));
+console.log(decode('h2ll4')); */
+
+// TODO https://www.codewars.com/kata/5420fc9bb5b2c7fd57000004/train/javascript Highest Rank Number in an Array 6Kuy
+
+/* function highestRank(arr) {
+    const obj = {};
+    const res = [];
+    for (let i = 0; i < arr.length; i++) {
+        obj[arr[i]] = obj[arr[i]] ? (obj[arr[i]] += 1) : 1;
+    }
+    console.log(obj);
+    let max = Math.max(...Object.values(obj));
+    console.log(max);
+
+    for (let key in obj) {
+        if (obj[key] === max) {
+            res.push(key);
+        }
+    }
+    console.log(obj);
+    return Math.max(...res);
+}
+
+console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10])); */
+
+// TODO https://www.codewars.com/kata/58d76854024c72c3e20000de/train/javascript Reverse every other word in the string 6 kyu
+
+// function reverse(str) {
+//     let work = str.trim().split(' ');
+//     // console.log(work[1].split('').reverse().join(''));
+//     for (let i = 1; i < work.length; i += 2) {
+//         work.splice(i, 1, work[i].split('').reverse().join(''));
+//     }
+
+//     return work.join(' ');
+// }
+
+// console.log(reverse('Reverse this string, please!'));
+
+// TODO https://www.codewars.com/kata/58223370aef9fc03fd000071/train/javascript  Dashatize it 6 kuy
+// ! BROKEN
+// function dashatize(num) {
+//     let work = String(num).split('');
+//     const res = [];
+//     for (let i = 0; i < work.length; i++) {
+//         // if (work[i] === '-') {
+//         //     continue;
+//         // }
+//         if (i === 0 && work[i] % 2 !== 0) {
+//             res.push(work[i], '-');
+//             continue;
+//         }
+//         if (i === work.length - 1 && work[i] % 2 !== 0) {
+//             res.push('-', work[i]);
+//             continue;
+//         }
+//         if (work[i] % 2 !== 0 && work[i - 1] !== '-') {
+//             // work.splice(i - 1, 3, '-', work[i], '-');
+//             res.push(work[i], '-');
+//         }
+//     }
+//     return res.join('');
+// }
+
+// console.log(dashatize(274));
