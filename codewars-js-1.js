@@ -1601,7 +1601,7 @@ console.log(sortByBit([7, 6, 15, 8]));*/
 
 // TODO 6 kyu https://www.codewars.com/kata/lets-recycle
 
-const input = [
+/*const input = [
     { type: 'rotten apples', material: 'organic' },
     { type: 'out of date yogurt', material: 'organic', secondMaterial: 'plastic' },
     { type: 'wine bottle', material: 'glass', secondMaterial: 'paper' },
@@ -1628,4 +1628,209 @@ function recycle(array) {
     return [paper, glass, organic, plastic];
 }
 
-console.log(recycle(input));
+console.log(recycle(input));*/
+
+// TODO 7 kyu https://www.codewars.com/kata/javascript-mathematician
+
+/*function calculate(...args) {
+    // console.log(args);
+    let count = 0;
+    for (let i = 0; i < args.length; i++) {
+        count += args[i];
+    }
+    // console.log(count);
+    return function (...title) {
+        let countTwo = 0;
+        for (let i = 0; i < title.length; i++) {
+            countTwo += title[i];
+        }
+        // console.log(countTwo);
+        return count + countTwo;
+    };
+}*/
+
+/*
+function calculate(...args1) {
+    return function (...args2) {
+        return [...args1, ...args2].reduce((acc, el) => acc + el);
+    };
+}
+
+console.log(calculate(1)(1)); // should return 2
+console.log(calculate(1, 1)(1)); // should return 3
+console.log(calculate(1, 1)(1, -1)); // should return 2
+console.log(calculate(2, 4)(3, 7, 1)); // should return 17
+*/
+
+/*function createFunctions(n) {
+    const callbacks = [];
+
+    for (let i = 0; i < n; i++) {
+        callbacks.push(function () {
+            return i;
+        });
+    }
+
+    return callbacks;
+}
+let callbacks = createFunctions(5);
+console.log(callbacks[0]()); // must return 0
+console.log(callbacks[3]()); // must return 3*/
+
+// TODO 6 kyu https://www.codewars.com/kata/can-you-keep-a-secret
+
+/*function createSecretHolder(secret) {
+    return {
+        getSecret() {
+            return secret;
+        },
+        setSecret(v) {
+            secret = v;
+        },
+    };
+}
+
+const obj = createSecretHolder(5);
+
+console.log(obj);
+console.log(obj.getSecret());
+console.log(obj.setSecret(2));
+console.log(obj.getSecret());*/
+
+// Создаем свой метод MAP
+/*Array.prototype.mapTwo = function (fn, nThis) {
+    //создаем новый массив и создаем копию из массива, к которому будет вызван метод
+    let newArr = this.slice();
+    this.forEach((el, ind, arr) => (newArr[ind] = fn.apply(nThis, [el, ind, arr])));
+
+    return newArr;
+};
+
+let one_to_nine = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let res = one_to_nine.mapTwo(el => el * 2);
+console.log(res);*/
+
+//создаем свой метод BIND
+// let name = 'Vadim';
+// const person = {
+//     name: 'Vadim',
+// };
+//
+// function info(phone, email) {
+//     console.log(`Имя: ${this.name}, Тел: ${phone}, Имя: ${email}`);
+// }
+// Demo
+// info.bind(person)('+375295163483', 'mat23vadim@mail.ru');
+// info.bind(person, '+375295163483')('mat23vadim@mail.ru');
+// info.bind(person, '+375295163483', 'mat23vadim@mail.ru')();
+
+// function bind(fn, context, ...rest) {
+//     return function (...args) {
+//         const uniq = Date.now().toString();
+//         context[uniq] = fn;
+//         const result = context[uniq](...rest.concat(...args));
+//
+//         delete context[uniq];
+//         return result;
+//     };
+// }
+
+// bind(info, person)('+375295163483', 'mat23vadim@mail.ru');
+// bind(info, person, '+375295163483')('mat23vadim@mail.ru');
+// bind(info, person, '+375295163483', 'mat23vadim@mail.ru')();
+
+//TODO 7 kyu https://www.codewars.com/kata/my-language-skills
+
+/*function myLanguages(results) {
+    const res = [];
+    for (let key in results) {
+        if (results[key] >= 60) {
+            res.push(key);
+        }
+    }
+    return res.sort((a, b) => results[b] - results[a]);
+}
+
+console.log(myLanguages({ Hindi: 60, Dutch: 93, Greek: 71 }));*/
+
+// 6 kyu https://www.codewars.com/kata/run-length-encoding
+
+/*const runLengthEncoding = function (str) {
+    const res = [];
+    let counter = 1;
+    for (let i = 0; i < str.length; i++) {
+        // считаем до тех пор, пока одинаковые элементы
+        if (str[i] === str[i + 1]) {
+            counter++;
+            // как только элементы одинаковые закончились, пушим элемент и счетчик
+        } else {
+            res.push([counter, str[i]]);
+            counter = 1;
+        }
+    }
+
+    return res;
+};
+
+console.log(runLengthEncoding('aaaaab'));*/
+/*let object = {
+    user: {
+        name: {
+            first: 'John',
+            last: 'Snow',
+        },
+    },
+};
+function find(object, path) {
+    return object['user.name'];
+}
+let path = 'user.name.first';
+console.log(find(object, path));*/
+
+// TOWER'S Kata
+// ! My solution
+/* function towerBuilder(nFloors) {
+    let res = [];
+    for (let i = 0; i < nFloors; i++) {
+        const count = [];
+        for (let j = 0; j < i * 2 + 1; j++) {
+            count.push('*');
+        }
+        res.push(count.join(''));
+    }
+    res = res.reverse();
+    res = res.map(el => el.split(' '));
+    for (let i = 0; i < res.length - 1; i++) {
+        let end = (res[i].length - res[i + 1].length) / 2 + i;
+        console.log(end);
+        for (let k = 0; k <= end; k++) {
+            res[i + 1].push(' ');
+        }
+        for (let j = 0; j <= end; j++) {
+            res[i + 1].unshift(' ');
+        }
+
+        // console.log(res[i].split(""));
+    }
+
+    return res.reverse().map(el => el.join(''));
+    // return res;
+}
+
+console.log(towerBuilder(6)); */
+
+//! help solution
+function towerBuilder(nFloors) {
+    let space,
+        star,
+        tower = [];
+    for (let i = 1; i <= nFloors; i++) {
+        space = ' '.repeat(nFloors - i);
+        star = '*'.repeat(2 * i - 1);
+        tower.push(`${space}${star}${space}`);
+    }
+
+    return tower;
+}
+
+console.log(towerBuilder(10));
